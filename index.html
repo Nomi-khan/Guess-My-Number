@@ -4,29 +4,71 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <link rel="stylesheet" href="style.css" />
     <title>Guess My Number!</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="style2.css">
   </head>
   <body>
-    <header>
-      <h1>Guess My Number!</h1>
-      <p class="between">(Between 1 and 20)</p>
-      <button class="btn again">Again!</button>
-      <div class="number">?</div>
-    </header>
-    <main>
-      <section class="left">
-        <input type="number" class="guess" min="1" max="20" />
-        <button class="btn check">Check!</button>
-      </section>
-      <section class="right">
-        <p class="message">Start guessing...</p>
-        <p class="label-score">💯 Score: <span class="score">20</span></p>
-        <p class="label-highscore">
-          🥇 Highscore: <span class="highscore">0</span>
-        </p>
-      </section>
-    </main>
+    <div class="container-fluid">
+      <!-- Creating Header -->
+      <div class="row position-relative" style="border-bottom: 7px solid #eee">
+        <div class="col-md-6 col-sm-12 mt-2 p-3 text-start">
+          <button class="btn btn-light rounded-0  again" type="button">
+            Play Again!
+          </button>
+        </div>
+        <div class="col-md-6 col-sm-12 mt-2 p-3 fs-4 fw-light text-end">
+          <p>(Between 1 and 20)</p>
+        </div>
+        <div class="col-md-12 col-sm-12 text-center mt-5 mb-5">
+          <h1 class="display-2">Guess My Number!</h1>
+        </div>
+        <!-- Guess Number -->
+        <div class="col-md-12 col-sm-12 col-12 position-absolute" style="top: 85%">
+          <div
+            class="col-sm-1 col-2 mt-2 text-bg-light text-center m-auto display-3 fw-bold number"
+          >
+            ?
+          </div>
+        </div>
+      </div>
+
+      <!-- Creating Main -->
+
+      <div class="row position-relative mt-5">
+        <div class="col-md-4 offset-md-1 col-sm-6 offset-sm-3 col-6 offset-3 p-3">
+            <div class="col-md-6 offset-md-3 col-sm-5 offset-sm-3 col-8 offset-2 mt-2">
+                <input
+                  type="number"
+                  class="bg-transparent text-light text-center fs-1 fw-bold form-control rounded-2 p-3 guess"
+                  min="1"
+                  max="20"
+                />
+            </div>
+            <br>
+            <div class="col-md-4 offset-md-4 col-sm-3 offset-sm-4 col-6 offset-3">
+                <button
+                class="btn btn-outline-light form-control rounded-0 fs-5 p-2 check"
+              >
+                Check!
+              </button>
+            </div>
+        </div>
+        <!-- Dive for message and score and highscore -->
+        <div class="col-md-4 offset-md-1 col-sm-6 offset-sm-3 col-6 offset-3 mt-3 p-2">
+            <p class="message display-6 p-2">Start guessing...</p>
+            <p class="label-score">💯 Score: <span class="score">20</span></p>
+            <p class="label-highscore">
+              🥇 Highscore: <span class="highscore">0</span>
+            </p>            
+        </div>
+        
+      </div>
+
     <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

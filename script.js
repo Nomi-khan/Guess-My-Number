@@ -12,6 +12,10 @@ const displayMessage = function (message) {
   document.querySelector('.message').textContent = message;
 };
 
+const message_color = function (color) {
+  document.querySelector('.message').style.color = color;
+};
+
 // to displaying score
 const displayScore = function (score) {
   document.querySelector('.score').textContent = score;
@@ -28,17 +32,18 @@ document.querySelector('.check').addEventListener('click', function () {
     // when input is greater then 20
   } else if (guess > 20) {
     displayMessage('Please enter number btween 1 and 20!');
+    message_color('red');
 
     // when input is equle to secretnumber
   } else if (guess === secretNumber) {
     displayMessage('🎉 Correct number!');
+    message_color('white');
 
     document.querySelector('.number').textContent = secretNumber;
 
     document.querySelector('body').style.backgroundColor = '#60b347';
-    document.querySelector('body').style.color = '#000';
 
-    document.querySelector('.number').style.width = '30rem';
+    // document.querySelector('.number').style.width = '30rem';
 
     if (score > highscore) {
       highscore = score;
@@ -77,6 +82,5 @@ document.querySelector('.again').addEventListener('click', function () {
   document.querySelector('.number').textContent = '?';
 
   document.querySelector('body').style.backgroundColor = '#222';
-  document.querySelector('body').style.color = '#eee';
-  document.querySelector('.number').style.width = '15rem';
+  message_color('white');
 });
